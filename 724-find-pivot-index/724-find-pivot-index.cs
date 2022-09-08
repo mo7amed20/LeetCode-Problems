@@ -1,23 +1,23 @@
 public class Solution {
-       public int PivotIndex(int[] nums)
+        public int PivotIndex(int[] nums)
         {
             int LeftSum = 0;
             var total = nums.Sum();
 
             for (int i = 0; i < nums.Length; i++)
             {
-                int RightSum = total - LeftSum - nums[i] ;
-                
-                if(LeftSum==RightSum)
+                if(i!=0)
+                {
+                    LeftSum += nums[i - 1];
+                }
+
+                if (LeftSum == total - LeftSum - nums[i])
                 {
                     return i;
                 }
-                else
-                {
-                    LeftSum += nums[i];
-                }
             }
 
-            return  -1;
+            return -1;
         }
+
 }

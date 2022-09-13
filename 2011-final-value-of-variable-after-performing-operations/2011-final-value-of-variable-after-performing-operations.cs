@@ -9,7 +9,7 @@ public class Solution {
                 {
                     ++x;
                 }
-                if(operations[i].Contains("-"))
+                else
                 {
                     --x;
                 }
